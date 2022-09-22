@@ -2,6 +2,9 @@
     display: flex ;
     justify-content: center;
     align-items: center;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
 
 
 }
@@ -51,14 +54,30 @@
 
 }
 
+
+/*暴力整頓body*/
+body{
+    margin: 0;
+    padding: 0;
+}
+
 .welcome{ /*利用水平的功能做完美置中排版*/
     margin-top: 10px;
     background-color: #ffad60;
     height: 300px;
-    width: auto;
+    /*width: auto;*/
+    
+
     display: flex;
     justify-content: center;
     align-items: center;
+    
+
+    /*
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+    */
+   
 
 
 }
