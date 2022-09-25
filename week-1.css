@@ -208,6 +208,7 @@ body{
     background-color:#8bc24c ;
     flex: content;
     /*position: relative;*/
+    overflow:hidden;
 }
 
 
@@ -217,6 +218,7 @@ body{
     background-color:#8bc24c ;
     margin-left: 20px;
     flex: content;
+    overflow:hidden;
 }
 
 .square-3{
@@ -224,6 +226,7 @@ body{
     height: 240px;
     background-color:#8bc24c ;
     margin-left: 20px;
+    overflow:hidden;
     
 }
 
@@ -233,57 +236,65 @@ body{
     background-color:#8bc24c ;
     margin-left: 20px;
     flex: content;
+    overflow:hidden;
 }
 
 /*圖片大概長寬1:1.5*/
 /*我的圖片大概是寬285*長190*/
 /*圖片文字框用50高*/
 
-.pic-1-out{
-    position:relative;
-    
-}
+
 
 .pic{
-    width: 285px;
-    height: 190px;
+    width: 285px; /*原圖285寬*/
+    height: 240px; /*原圖190高*/
     background-size:contain;
 
     align-items: center;
-    /*position:relative;*/
-    overflow:hidden;
+    position:relative;
+    /*overflow:hidden;*/
+    z-index:1;
+
+    
+    
 
 
 }
 
 /*這我原先控制大家的圖片*/
 img{        
-    /*
-    width: 100%;
-    height: auto;
-    */
-    display: block;
+
+    /*display: block;*/
     margin-left: auto;
     margin-right: auto;
     width: 100%;
+    object-fit: cover;
+    
 
-    /*position:relative;*/
 }
 
 /*開始針對各圖片做id命名控制*/
 
+#img-control{
+    height: 100%;
+}
+
 
 #star{
 
+    width: 30px;
+    height: 30px;
+
+    position:absolute; /*我定位是跟著pic層的*/
+    top:10px;
+    right:10px;
     
-    position:absolute;
-    top:0px;
-    right:0px;
-    
-    scale: 0.1;
-    filter: drop-shadow(5px 50px 2px rgba(203, 161, 23, 0.7));
-    
+    /*scale: 0.1;*/
+    filter: drop-shadow(5px 5px 2px rgba(203, 161, 23, 0.7));
+    z-index:2;
 }
+
+
 
 
 
@@ -291,10 +302,12 @@ img{
     display: flex;
     justify-content: center;
     align-items: center;
-    /*
-    background-color: rgb(255, 255, 255);
-    opacity: 0.01;
-    */
+    
+    background-color: rgba(255, 255, 255, 0.5);
+    position: relative;
+    bottom: 50px;
+    left:0px;
+    z-index:3;
     
 }
 
@@ -303,8 +316,6 @@ img{
     font-size: 20px;
     line-height: 50px;
 
-    
-    
     
 }
 
@@ -327,6 +338,7 @@ img{
     width: 285px;
     height: 240px;
     background-color:#8bc24c ;
+    overflow:hidden;
 }
 
 .square-6{
@@ -334,6 +346,7 @@ img{
     height: 240px;
     background-color:#8bc24c ;
     margin-left: 20px;
+    overflow:hidden;
 }
 
 .square-7{
@@ -341,6 +354,7 @@ img{
     height: 240px;
     background-color:#8bc24c ;
     margin-left: 20px;
+    overflow:hidden;
 }
 
 .square-8{
@@ -348,6 +362,7 @@ img{
     height: 240px;
     background-color:#8bc24c ;
     margin-left: 20px;
+    overflow:hidden;
 }
 
 
@@ -397,7 +412,7 @@ img{
         
         width: 45%;
         /*flex: content;*/
-        flex-grow: 1;
+        /*flex-grow: 1;*/
         
 
         position:relative;
@@ -410,7 +425,7 @@ img{
     .square-2{
         width: 45%;
         /*flex: none;*/
-        flex-grow: 1;
+        /*flex-grow: 1;*/
         
             
         
@@ -465,7 +480,8 @@ img{
 
         /*position: relative;*/
         
-        
+        position:relative;
+        z-index: 1;       
         
         
 
@@ -487,16 +503,6 @@ img{
     
     }
 
-    .pic-1-out{
-        /*
-        margin: 0;
-        padding: 0;
-        */
-        position:relative;
-        z-index: 1;        
-
-       
-    }
 
 
 
@@ -506,8 +512,7 @@ img{
         position: absolute;
         
                       
-        top:0px;
-        right:0px;
+
         
         z-index:2;
         
